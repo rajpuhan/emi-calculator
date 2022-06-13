@@ -1,0 +1,13 @@
+<div class="range-container">
+    <div class="range-header">
+        <label for={{for}}>{{label}}</label>
+        <input type="number" name="amount" (change)="triggerInputChange()" class="input-amount" min={{min}} max={{max}} [(ngModel)]="rangeValue">
+    </div>
+    <div class="range-input">
+        <input type="range" name="loanamount" id="loan-amount" (change)="triggerInputChange()" [(ngModel)]="rangeValue" min={{min}} max={{max}} class="range" />
+        <div class="range-input__value">
+            <span class="min">{{minLabel}}</span>
+            <span class="max">{{maxLabel}}</span>
+        </div>
+    </div>
+</div>

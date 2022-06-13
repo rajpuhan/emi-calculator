@@ -1,0 +1,30 @@
+<section>
+    <header class="header">
+        <h2 class="title">EMI Calculator</h2>
+    </header>
+    <main class="main">
+        <div class="input__section">
+            <app-slider [default]="principal" [label]="'LOAN AMOUNT'" [minLabel]="'0'" [maxLabel]="'5CR'" [min]="0" [max]="50000000" [for]="'loan-amount'" (onRangeValueSelect)="calculateEMI('principal',$event.value)"></app-slider>
+            <app-slider [default]="interest" [label]="'INTEREST RATE'" [minLabel]="'0'" [maxLabel]="'10%'" [min]="0" [max]="15" [for]="'interest-rate'" (onRangeValueSelect)="calculateEMI('interest',$event.value)"></app-slider>
+            <app-slider [default]="time" [label]="'LOAN TERM(Years)'" [minLabel]="'0'" [maxLabel]="'5Year'" [min]="0" [max]="30" [for]="'loan-term'" (onRangeValueSelect)="calculateEMI('time',$event.value)"></app-slider>
+        </div>
+        <div class="result__section">
+            <google-chart #chart [type]="chartType" [data]="chartData" [options]="chartOptions" [width]="470" [height]="350">
+            </google-chart>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-col">
+            <span class="label">Montly EMI</span>
+            <p class="value">{{emi | number:'1.0-2'}}</p>
+        </div>
+        <div class="footer-col">
+            <span class="label">Principal</span>
+            <p class="value">{{principal | number}}</p>
+        </div>
+        <div class="footer-col">
+            <span class="label">Interest Payble</span>
+            <p class="value">{{interestPayble | number}}</p>
+        </div>
+    </footer>
+</section>

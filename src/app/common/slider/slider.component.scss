@@ -1,0 +1,40 @@
+.range {
+    &-container {
+        margin-bottom: 20px;
+    }
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        label {
+            font-size: 0.875rem;
+            color: #9f9f9f;
+        }
+    }
+    &-input {
+        display: flex;
+        flex-direction: column;
+        .range {
+            width: 100%;
+            margin: 10px 0;
+            ;
+        }
+        &__value {
+            display: flex;
+            justify-content: space-between;
+            .max,
+            .min {
+                font-size: 14px;
+                color: #9f9f9f;
+            }
+        }
+    }
+}
+
+.input-amount {
+    border-radius: 25px;
+    font-size: 1.125rem;
+    border: 1px solid #ccc;
+    text-align: right;
+    padding: 8px;
+    width: 20%;
+}
